@@ -37,10 +37,10 @@ export default function Images() {
     };
   }, []);
 
-  function downloadImage(imageUrl) {
+  function downloadImage(imageUrl: string) {
     const link = document.createElement("a");
     link.href = imageUrl;
-    link.download = imageUrl.split("/").pop();
+    link.download = imageUrl.split("/").pop() || "download";
     link.click();
   }
 
