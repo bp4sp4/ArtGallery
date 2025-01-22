@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import imagePaths from "../../src/data/imagePaths.json";
-import styles from "./image.module.css";
+import styles from "../components/image.module.css";
 
 export default function Images() {
   useEffect(() => {
@@ -53,10 +53,11 @@ export default function Images() {
             src={`${process.env.NEXT_PUBLIC_BASE_PATH}${image.path}`}
             alt={`Image ${index}`}
           />
-
           <button
             className={styles.download_btn}
-            onClick={() => downloadImage(image.path)}
+            onClick={() =>
+              downloadImage(`${process.env.NEXT_PUBLIC_BASE_PATH}${image.path}`)
+            }
           >
             Download
           </button>
