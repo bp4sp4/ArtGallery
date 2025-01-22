@@ -56,7 +56,9 @@ export default function Images() {
 
           <button
             className={styles.download_btn}
-            onClick={() => downloadImage(image.path)}
+            onClick={() =>
+              downloadImage(`${process.env.NEXT_PUBLIC_BASE_PATH}${image.path}`)
+            }
           >
             Download
           </button>
